@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab4.employee_controller">
+   <bottom>
+      <AnchorPane prefHeight="62.0" prefWidth="600.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="518.0" layoutY="9.0" mnemonicParsing="false" onAction="#btn_menu" prefHeight="50.0" prefWidth="76.0" text="Powrót" AnchorPane.bottomAnchor="3.1999999999999957" AnchorPane.leftAnchor="517.6" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="9.0" />
+            <Button layoutX="14.0" layoutY="6.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="76.0" style="-fx-background-color: green;" text="Zatwierdż" />
+            <Button layoutX="99.0" layoutY="6.0" mnemonicParsing="false" onAction="#removeEmployee" prefHeight="50.0" prefWidth="76.0" style="-fx-background-color: red;" text="Usuń" />
+            <Button fx:id="myButton" layoutX="186.0" layoutY="6.0" mnemonicParsing="false" onAction="#modify" prefHeight="50.0" prefWidth="76.0" style="-fx-background-color: #ffffa1;" text="Modykifuj" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <left>
+      <AnchorPane prefHeight="292.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableView" layoutX="188.0" layoutY="45.0" prefHeight="206.0" prefWidth="398.0">
+              <columns>
+                <TableColumn fx:id="imie" onEditCommit="#changeName" prefWidth="75.0" text="Imię" />
+                <TableColumn fx:id="nazwisko" onEditCommit="#changeLastname" prefWidth="75.0" text="Nazwisko" />
+                  <TableColumn fx:id="stan" onEditCommit="#changeCondition" prefWidth="75.0" text="Stan" />
+                  <TableColumn fx:id="rok" onEditStart="#changeBirthday" prefWidth="75.0" text="Rok" />
+                  <TableColumn fx:id="wynagrodzenie" onEditCommit="#changesalary" prefWidth="96.00002441406252" text="Wynagrodzenie" />
+              </columns>
+            </TableView>
+            <TextField fx:id="name" layoutX="14.0" layoutY="71.0" prefHeight="26.0" prefWidth="161.0" promptText="Imie" />
+            <TextField fx:id="lastname" layoutX="14.0" layoutY="121.0" prefHeight="26.0" prefWidth="161.0" promptText="Nazwisko" />
+            <TextField fx:id="salary" layoutX="14.0" layoutY="173.0" prefHeight="26.0" prefWidth="161.0" promptText="Wynagrodzenie" />
+            <TextField fx:id="birthday" layoutX="14.0" layoutY="225.0" prefHeight="26.0" prefWidth="76.0" promptText="Rok" />
+            <TextField fx:id="condition" layoutX="101.0" layoutY="225.0" prefHeight="26.0" prefWidth="73.0" promptText="Stan" />
+            <TextField fx:id="searchText" layoutX="437.0" layoutY="14.0" onKeyPressed="#search" />
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <Label text="Pracownicy" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

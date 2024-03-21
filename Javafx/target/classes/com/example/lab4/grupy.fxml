@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab4.container_controller">
+   <bottom>
+      <AnchorPane prefHeight="62.0" prefWidth="600.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="708.8" layoutY="9.0" mnemonicParsing="false" onAction="#btn_menu" prefHeight="50.0" prefWidth="76.0" text="Powrót" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="709.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="9.0" />
+            <Button layoutX="303.0" layoutY="9.0" mnemonicParsing="false" onAction="#Pokaz" prefHeight="50.0" prefWidth="76.0" text="Sprawdz" />
+            <Button layoutX="101.0" layoutY="9.0" mnemonicParsing="false" onAction="#removeClassEmployee" prefHeight="50.0" prefWidth="76.0" style="-fx-background-color: red;" text="Usuń" />
+            <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#submit" prefHeight="50.0" prefWidth="76.0" style="-fx-background-color: green;" text="Dodaj" />
+            <Button fx:id="myButton" layoutX="189.0" layoutY="9.0" mnemonicParsing="false" onAction="#modify" prefHeight="50.0" prefWidth="76.0" style="-fx-background-color: #ffffa1;" text="Modyfikuj" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listView" layoutX="14.0" layoutY="55.0" prefHeight="214.0" prefWidth="206.0" />
+            <TextField fx:id="group" layoutX="14.0" layoutY="1.0" prefHeight="26.0" prefWidth="120.0" promptText="Nazwa grupy" />
+            <TextField fx:id="max_" layoutX="152.0" layoutY="1.0" prefHeight="26.0" prefWidth="69.0" promptText="Max osób" />
+         </children></AnchorPane>
+   </left>
+   <top>
+      <Label text="Grupy " BorderPane.alignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <right>
+      <TableView fx:id="tableView2" prefHeight="198.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="imie" prefWidth="98.4000244140625" text="Imie" />
+          <TableColumn fx:id="nazwisko" prefWidth="100.79998779296875" text="Nazwisko" />
+        </columns>
+      </TableView>
+   </right>
+   <center>
+      <AnchorPane prefHeight="292.0" prefWidth="325.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableView" layoutX="8.0" prefHeight="286.0" prefWidth="362.0">
+              <columns>
+                <TableColumn fx:id="nazwa_grupy" onEditCommit="#changeGroupName" prefWidth="86.4000244140625" text="Nazwa grupy" />
+                <TableColumn fx:id="ilosc_osob" prefWidth="81.60003662109375" text="Ilość osób" />
+                  <TableColumn fx:id="max_osob" onEditCommit="#changemax_pp" prefWidth="81.60003662109375" text="Max osób" />
+                  <TableColumn fx:id="zapelnienie" prefWidth="109.5999755859375" text="Zapełnienie [%]" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
